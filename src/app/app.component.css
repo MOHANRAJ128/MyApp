@@ -1,0 +1,46 @@
+ .toolbar {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+  .bodyClass{
+    position: relative;
+    display: flex;
+    top: 60px;
+    left: 0;
+  }
+  .menuBar{
+    position:absolute;
+    top:10px;
+    width:20px;
+    height:0px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  #menuId{
+    width: 17px;
+    height: 4px;
+    border-radius: 20px;
+    background-color: black;
+    margin: 6px 0;
+  }
+  .footerClass{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.651);
+    font-weight: 600;
+  }
