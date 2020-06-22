@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ReceiveDataService, Fresher, UserData } from './service/receive-data.service';
 import { Router } from '@angular/router';
 
-import { ApiCallService } from './service/api-call.service';
+import { ApiCallService, MappedResources } from './service/api-call.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +17,7 @@ export class AppComponent {
   fresh: Fresher;
   user:UserData;
   token:String;
+  mappedResources:MappedResources[];
   constructor(private service:ReceiveDataService,private http:HttpClient,private router:Router,private apiCall:ApiCallService) {
 
   }
@@ -47,11 +48,6 @@ export class AppComponent {
       document.location.href="http://localhost:8080/GodsEyeFinal/login";
     }
 
-  }
-  checkFunc(){
-    console.log(this.service.getFresherService().subscribe(data =>
-     this.fresh=data,
-      ));
   }
   
 }

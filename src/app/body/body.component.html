@@ -1,7 +1,7 @@
 <div class="featureClass" (click)="newResourceFunc()">
     <h4>Request For New Resources</h4>
 </div>
-<div class="featureClass">
+<div class="featureClass" *ngIf="mappedResources">
     <span class="badge">{{mappedResources[0].dmId}}</span>
     <h4>View newly added Resources</h4>
 </div>

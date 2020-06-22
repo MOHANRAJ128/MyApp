@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiCallService ,MappedResources} from '../service/api-call.service';
 import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
+// import { debug } from 'console';
 
 @Component({
   selector: 'app-body',
@@ -16,13 +17,16 @@ export class BodyComponent implements OnInit {
 
   ngOnInit(): void 
   {
-
+    this.apiCallService.mappedResourceFunc().subscribe((data:MappedResources[])=>
+    {
+        this.mappedResources=data;
+    })
     this.intervalId=setInterval(()=>{
       this.apiCallService.mappedResourceFunc().subscribe((data:MappedResources[])=>
       {
           this.mappedResources=data;
       })
-    },3600000)
+    },600000)
     
   }
   ngOnDestroy() {
